@@ -16,7 +16,7 @@ var app = express()
 
 app.get("/", (req, res) => {
 
-    var url = `http://localhost:${basePort + offset}/now.flv`;
+    var url = `http://localhost:${basePort + offset}/a.flv`;
     console.log(`redirect to ${url}`)
     res.redirect(url)
 
