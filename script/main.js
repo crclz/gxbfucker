@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         gxbfucker
 // @namespace    https://github.com/crclz/gxbfucker
-// @version      0.1
+// @version      0.2
 // @description  高校邦浏览器端脚本
 // @author       crclz
 // @match        https://*.gaoxiaobang.com/*
@@ -52,10 +52,11 @@ const catVideo17minUrl = 'http://localhost:3000';
     // Wait until video is loaded or keep waiting if there's no video.
     await JsExt.waitUntil(() => PageUtils.getOneVideo())
 
-    // Wait gxb's js code to load normal video
-    await JsExt.wait(500)
-
     let video0 = PageUtils.getOneVideo()
+
+    // Wait gxb's js code to load normal video
+    await JsExt.waitUntil(() => video0.duration > 0)
+    let originalDuration = video0.duration
 
     // Prevent the page from redirecting when video ends
     // TODO: test if can use video0 instead of window (window works)
@@ -78,13 +79,20 @@ const catVideo17minUrl = 'http://localhost:3000';
         // Close the shit dialog
         $(".gxb-dialog-close").click()
 
-        // Check if 100%
-        var learnPercent = $('span.video-percent').text()
-        if (learnPercent === '100') {
-            // Close page after 5 seconds
+        // // Check if 100%
+        // var learnPercent = $('span.video-percent').text()
+        // if (learnPercent === '100') {
+        //     // Close page after 5 seconds
+        //     setTimeout(() => close(), 5000)
+        // }
+
+        // Check if exceeds original requirement
+        if (video0.currentTime > originalDuration) {
             setTimeout(() => close(), 5000)
         }
 
+        // Display progress on title
+        PageUtils.setTitle(Math.floor(100 * video0.currentTime / originalDuration))
     }, 200)
 
     // Register mid-click on chapter list
