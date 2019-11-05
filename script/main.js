@@ -43,11 +43,11 @@ class JsExt {
     }
 }
 
+// Be attention: main is an async function.
 (async function () {
     'use strict';
-    // Your code here...
 
-    // Wait until
+    // Wait until video is loaded or keep waiting if there's no video.
     await JsExt.waitUntil(() => PageUtils.getOneVideo())
 
     let video0 = PageUtils.getOneVideo()
