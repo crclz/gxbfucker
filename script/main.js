@@ -20,13 +20,43 @@ class PageUtils {
         document.title = text;
     }
 
+    static getOneVideo() {
+        return document.getElementsByTagName('video')[0]
+    }
+
 }
 
-(function () {
-    'use strict';
+class JsExt {
+    static wait(milliseconds) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => resolve(), milliseconds)
+        })
+    }
 
+    static async waitUntil(predicate) {
+        while (true) {
+            if (predicate()) {
+                return
+            }
+            await JsExt.wait(200)
+        }
+    }
+}
+
+(async function () {
+    'use strict';
     // Your code here...
-    PageUtils.blockEndedEvent(window);
-    PageUtils.setTitle('nmsl')
+
+    // Wait until
+    await JsExt.waitUntil(() => PageUtils.getOneVideo())
+
+    let video0 = PageUtils.getOneVideo()
+
+    if (video0) {
+        PageUtils.setTitle('has-video')
+    } else {
+        throw new Error('Should have video')
+    }
+
 
 })();
