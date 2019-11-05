@@ -1,0 +1,27 @@
+# gxbfucker
+
+## 前言
+刷高校邦需要2个程序：
+- 浏览器端插件
+- （运行在本地的）视频服务器
+
+## 浏览器端插件
+1. 请前往 http://www.tampermonkey.net/ ，根据提示，安装你所使用的浏览器对应的`Tampermonkey`。
+
+    > `Tampermonkey`是一款免费的浏览器扩展和最为流行的用户脚本管理器，它适用于 Chrome, Microsoft Edge, Safari, Opera Next, 和 Firefox。
+
+    注意，如果你用的是chrome浏览器，那么你必须得有能连接到chrome商店的vpn才行。如果没有，推荐用Firefox或者edge。
+
+2. 安装完`Tampermonkey`后，接下来应该安装高校邦的辅助脚本。点击浏览器右上角新增的`Tampermonkey图标`，然后`管理面板`，然后`实用工具`。
+3. 在页面下方有一个`URL`的输入框。将 https://raw.githubusercontent.com/crclz/gxbfucker/master/script/main.js 复制到输入框中，然后点击`导入`。
+4. 点击`安装`。脚本会自动完成安装。
+5. 你以后可以在`管理面板`的`已安装脚本`中进行禁用、删除的操作。点击“最后更新”的`时间`，能够执行手动更新的操作。默认的自动更新频率取决于你在`设置`中的选项。
+
+## 视频服务器
+视频服务器需要下载，并运行在本地。有了本地的视频服务器，就可以免流量，并且就可以绕过chrome同一服务器连接数限制。
+
+下载与运行：
+1. 前提：NodeJS环境。下载 https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi 并安装。
+2. 下载Releases页( https://github.com/crclz/gxbfucker/releases )中的最新的视频服务器`cat-server.zip`。
+3. 解压，双击`run.bat`。现在服务器就启动成功了。在观看视频的时候，要让程序保持运行。
+4. `cat-server/public`文件夹里面有一个a.flv，时长为30分钟。这意味着最多能观看30分钟长度的高校邦视频。如果有超过30分钟的视频（应该很稀少），你可以`禁用插件`（上文有提到HowTo）后手动观看。
