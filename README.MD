@@ -13,7 +13,7 @@
     注意，如果你用的是chrome浏览器，那么你必须得有能连接到chrome商店的vpn才行。如果没有，推荐用Firefox或者edge。
 
 2. 安装完`Tampermonkey`后，接下来应该安装高校邦的辅助脚本。点击浏览器右上角新增的`Tampermonkey图标`，然后`管理面板`，然后`实用工具`。
-3. 在页面下方有一个`URL`的输入框。将 https://raw.githubusercontent.com/crclz/gxbfucker/master/script/main.js 复制到输入框中，然后点击`导入`。
+3. 在页面下方有一个`URL`的输入框。将`https://raw.githubusercontent.com/crclz/gxbfucker/master/script/main.js` 复制到输入框中，然后点击`导入`。
 4. 点击`安装`。脚本会自动完成安装。
 5. 你以后可以在`管理面板`的`已安装脚本`中进行禁用、删除的操作。点击“最后更新”的`时间`，能够执行手动更新的操作。默认的自动更新频率取决于你在`设置`中的选项。
 
