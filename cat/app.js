@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log(`dispathcer on port ${3000}`)
+    console.log(`load balancer on port ${3000}`)
 })
 
 //...
