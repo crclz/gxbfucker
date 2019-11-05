@@ -71,6 +71,7 @@ const catVideo17minUrl = 'http://localhost:3000';
     video0.pause = () => { }
 
     video0.play()
+    video0.playbackRate = 2.0
 
     // Do some periodical tasks
     setInterval(() => {
