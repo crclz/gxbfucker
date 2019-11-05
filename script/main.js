@@ -88,7 +88,7 @@ const catVideo17minUrl = 'http://localhost:3000';
 
         // Check if exceeds original requirement
         if (video0.currentTime > originalDuration) {
-            // Wait 20s to gxb's code sufficient time to "flush the  buffer"
+            // Wait 20s to gxb's code sufficient time to "flush the buffer" (but sometimes not working)
             setTimeout(() => close(), 20000)
         }
 
